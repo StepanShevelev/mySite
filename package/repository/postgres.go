@@ -2,6 +2,7 @@ package repository
 
 import (
 	"fmt"
+
 	"github.com/jmoiron/sqlx"
 )
 
@@ -28,11 +29,6 @@ func NewPostgresDB(cfg *Config) (*sqlx.DB, error) {
 		cfg.Host, cfg.Port, cfg.Username, cfg.DBName, cfg.Password, cfg.SSLMode)
 
 	db, err := sqlx.Open("postgres", connStr)
-
-	//db, err := sqlx.Open("postgres", "user=postgres password=qwerty host=localhost dbname=postgres port=5432 sslmode=disable")
-	//if err != nil {
-	//	return nil, err
-	//}
 
 	err = db.Ping()
 	if err != nil {
