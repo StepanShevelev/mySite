@@ -1,6 +1,7 @@
 package handler
 
 import (
+	_ "github.com/StepanShevelev/mySite/docs"
 	"github.com/StepanShevelev/mySite/package/service"
 	"github.com/gin-gonic/gin"
 )
